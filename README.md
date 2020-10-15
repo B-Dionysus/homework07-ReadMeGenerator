@@ -1,17 +1,25 @@
-# Such a Title
-undefined
+# Readme Generator
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
 ## Description
-This is such a project
-[# Such a Title](## Such a Title),* [Description](#description)
+We ask the user a series of questions, and then generate a helpful and well-formatted readme file based on their answers.
+## Table of Contents
+* [Description](#description)
+* [Installation Instructions](#Installation%20Instructions)
+* [Usage Instructions](#Usage%20Instructions)
+* [Testing Instructions](#Testing%20Instructions)
+* [Contribution Instructions](#How%20to%20Contribute)
+* [License](#License)
+* [Questions](#Questions)
 ## Installation Instructions
-just clone the repo
+Clone the git repo and then run npm (which should use package.json to install inquirer, all on its own).
 ## Usage Instructions
-run index.js
+Just ype "node index.js" in the directory in which you want the readme file.
 ## Testing Instructions
-Not sure what this means
+Just make sure there aren't any typos in the final file.
 ## How to Contribute
-Contact me
-Do What The F*ck You Want To Public License
+Please contact me at the provided email address.
+## License
+The Do What the Fuck You Want to Public License
 ## Questions
-Please contact b@b.net
-b-dionysus
+Please contact benjamin@sixbynine.com.
+Other projects I've worked on are here: https://github.com/B-Dionysus.

@@ -1,3 +1,6 @@
+// This is mainly just a giant array of licsense name:badge pairs, taken from 
+// this helpful website: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+
 const licenseArray=[{'Apache 2.0 License':'[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'},
 {'Boost Software License 1.0':'[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)'},
 {'BSD 3-Clause License':'[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'},
@@ -36,16 +39,24 @@ const licenseArray=[{'Apache 2.0 License':'[![License](https://img.shields.io/ba
 {'The Do What the Fuck You Want to Public License':'[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)'},
 {'The zlib/libpng License':'[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)'}];
 
-function findLicenseBadge(name){
-                
+// We loop throught the array, checking each elements key against the provided name, and we return the badge
+// I'm pretty sure that either my data structure or my traversal could be improved--it looks ugly and hard to read
+function getBadge(name){                
     for(l of licenseArray){
         if(name===Object.entries(l)[0][0]) return Object.entries(l)[0][1];
     }
 }
-
-
+// We generate an array of just the license names
+function getNames(){
+    let names=[];
+    for(x of licenseArray){
+        names.push(Object.keys(x)[0]);
+    }
+    return names;
+}
 module.exports={
     licenseArray,
-    findLicenseBadge
+    getBadge,
+    getNames
 }
 

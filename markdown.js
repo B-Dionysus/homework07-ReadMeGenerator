@@ -1,20 +1,19 @@
 
 const licenses=require("./licenses.js");
-var toc=[];
-function getTOC(){
-    return toc;
-}
 
+// This will be our table of contents
+// It's loaded one element at a time as we build the page
+var toc=[];
 
 // Here's a great ref for making a table of contents:
 // https://gist.github.com/jonschlinkert/ac5d8122bfaaa394f896
 
+// index.js passes us the page elements one at a time, along with the section they should go into
+// And this generates the appropriate markup, and also stores a link to it in the table of contents
 function addMarkdown(str, type){
-    console.log(str+" in "+type);
     switch(type){
         case "title":{
             str="# "+str;
-            toc.push(`[${str}](#${str})`);
             break;
         }
         case "desc":{
@@ -42,21 +41,22 @@ function addMarkdown(str, type){
             toc.push(`* [Contribution Instructions](#How%20to%20Contribute)`);
             break
         }
-        case "githubname":{
-            str="Other projects I've worked on are here:(https://github.com/"+str+")";
-            break;
-        }
         case "license":{
-
+            str="## License"+"\n"+str;
+            toc.push(`* [License](#License)`);
             break;
         }
         case "email":{
-            str="## Questions"+"\nPlease contact "+str;
+            str="## Questions"+"\nPlease contact "+str+".";
             toc.push(`* [Questions](#Questions)`);
             break
         }
+        case "githubName":{
+            str="Other projects I've worked on are here: https://github.com/"+str+".";
+            break;
+        }
         case "badge":{
-            str=licenses.findLicenseBadge(str);
+            str=licenses.getBadge(str);
             break;
         }
     }
