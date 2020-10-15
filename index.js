@@ -2,7 +2,6 @@ const inquirer=require("inquirer");
 const fs=require("fs");
 const markdown=require("./markdown");
 const licenses = require("./licenses");
-const { licenseArray } = require("./licenses");
 
 
 init();
