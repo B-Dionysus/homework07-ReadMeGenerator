@@ -13,7 +13,7 @@ We ask the user a series of questions, and then generate a helpful and well-form
 ## Installation Instructions
 Clone the git repo and then run npm (which should use package.json to install inquirer, all on its own).
 ## Usage Instructions
-Just ype "node index.js" in the directory in which you want the readme file.
+Just type "node index.js" in the directory in which you want the readme file.
 ## Testing Instructions
 Just make sure there aren't any typos in the final file.
 ## How to Contribute
